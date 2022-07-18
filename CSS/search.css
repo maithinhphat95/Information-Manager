@@ -1,0 +1,129 @@
+:root {
+  --main-color: rgb(170, 0, 0);
+  --shadow-color: rgb(0, 149, 255);
+}
+html {
+  width: 100%;
+  height: 100%;
+  /* background-image: url(https://free4kwallpapers.com/uploads/originals/2020/07/19/night-city-k-wallpaper.jpg); */
+  background-image: url("/Final Exam/IMG/bg-home.jpg");
+  background-size: 100% 100%;
+}
+body {
+  background-color: transparent;
+  overflow: auto;
+}
+p {
+  padding: 0;
+  margin: 0;
+}
+.btn-home {
+  background-color: var(--main-color) !important;
+  border: 0;
+  border-radius: 10px !important ;
+  box-shadow: 0 0 8px var(--shadow-color);
+  color: white !important;
+  font-size: 12px !important ;
+}
+.logo {
+  width: 200px;
+  border-radius: 20px;
+  box-shadow: 0 0 8px var(--shadow-color);
+  background-color: white;
+  padding: 4px 8px;
+}
+.userContainer {
+  font-size: 20px;
+}
+.main-back-color {
+  background-color: var(--main-color);
+}
+
+.main h1 {
+  font-size: 54px;
+  font-weight: 800;
+  text-shadow: 0 8px 4px black;
+}
+.footer {
+  height: 40px;
+  line-height: 40px;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+}
+.close {
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 700;
+}
+.modal-body input,
+.modal-body label {
+  margin-top: 0.5rem;
+}
+.levelSelector label {
+  margin-right: 1.5rem;
+}
+.levelSelector label input {
+  margin-right: 0.25rem;
+}
+.levelSelector label {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.dropdown-menu {
+  left: auto !important;
+  right: 0px !important;
+}
+li {
+  cursor: pointer;
+  padding: 8px;
+  min-width: 200px;
+}
+li:hover {
+  background-color: #ccc;
+}
+.bill-item {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.dropdown-item {
+  cursor: pointer;
+}
+table,
+thead,
+tbody,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 4px;
+}
+th {
+  background-color: #ccc;
+  color: rgb(28, 120, 219);
+  text-align: center;
+  text-transform: uppercase;
+}
+td {
+  text-align: right;
+}
+
+.bill-container {
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+}
+table,
+th,
+td {
+  font-size: 14px;
+}
+ul {
+  max-height: 300px;
+  overflow-y: scroll;
+}

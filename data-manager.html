@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Manager</title>
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./CSS/data.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="row p-3 m-0 justify-content-between">
+      <!-- Logo of home page -->
+      <a href="https://iviettech.vn/" class="text-center logo" target="_blank">
+        <img class="w-100" src="./IMG/logo.png" alt="" srcset="" />
+      </a>
+      <!-- User container: displayed on successful login -->
+      <div class="userContainer dropdown d-none">
+        <button
+          class="text-primary border-0 bg-transparent"
+          type="button"
+          id="userMenu"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <span class="userName"></span>
+          <i
+            class="text-primary fa fa-user-circle ml-2 mr-4"
+            aria-hidden="true"
+          ></i>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="userMenu">
+          <a class="dropdown-item gethome" href="./home.html">Trang chủ</a>
+
+          <a class="dropdown-item" href="./search.html">Tra cứu thông tin</a>
+          <a class="dropdown-item inforManager">Quản lý thông tin Customer</a>
+          <a class="dropdown-item logOutBtn">Đăng xuất</a>
+        </div>
+      </div>
+      <a
+        href="./home.html"
+        class="btn btn-primary btn-home go-back ml-2 rounded align-self-center"
+      >
+        Home
+      </a>
+    </div>
+    <form
+      class="container w-50 border border-success rounded p-3 my-3"
+      action=""
+      method="get"
+      name="electricCalculate"
+      onsubmit="return false"
+    >
+      <!-- Form Name -->
+      <h4 class="text-primary text-center mb-3">
+        Calculate monthly electricity bill for customers
+      </h4>
+      <div>
+        <!-- Name of customer -->
+        <div class="row mb-2 mb-lg-3">
+          <div
+            class="col col-lg-4 col-sm-12 col-md-12 d-flex align-items-center mb-sm-1 mb-lg-0"
+          >
+            <label for="#full-name">Full Name:</label>
+          </div>
+          <div class="col col-lg-8 col-sm-12 col-md-12">
+            <input
+              class="w-100 form-control"
+              type="text"
+              name="full-name"
+              id="full-name"
+              maxlength="30"
+              required
+            />
+            <p class="text-danger"></p>
+          </div>
+        </div>
+        <!-- Address of customer -->
+        <div class="row mb-2 mb-lg-3">
+          <div
+            class="col col-lg-4 col-sm-12 col-md-12 d-flex align-items-center mb-sm-1 mb-lg-0"
+          >
+            <label for="#address">Address:</label>
+          </div>
+          <div class="col col-lg-8 col-sm-12 col-md-12">
+            <input
+              class="w-100 form-control"
+              type="text"
+              name="address"
+              id="address"
+              maxlength="50"
+              required
+            />
+            <p class="text-danger"></p>
+          </div>
+        </div>
+        <!-- Start up -->
+        <div class="row mb-2 mb-lg-3">
+          <div
+            class="col col-lg-4 col-sm-12 col-md-12 d-flex align-items-center mb-sm-1 mb-lg-0"
+          >
+            <label for="#start-data">Start-up previod:</label>
+          </div>
+          <div class="col col-lg-8 col-sm-12 col-md-12">
+            <input
+              class="w-100 form-control"
+              type="number"
+              name="start-data"
+              id="start-data"
+              required
+              min="1"
+            />
+            <p class="text-danger"></p>
+          </div>
+        </div>
+        <!-- End of item -->
+        <div class="row mb-2 mb-lg-3">
+          <div
+            class="col col-lg-4 col-sm-12 col-md-12 d-flex align-items-center mb-sm-1 mb-lg-0"
+          >
+            <label for="#end-data">End-of-item digit:</label>
+          </div>
+          <div class="col col-lg-8 col-sm-12 col-md-12">
+            <input
+              class="w-100 form-control"
+              type="number"
+              name="end-data"
+              id="end-data"
+              required
+              min="1"
+            />
+            <p class="text-danger"></p>
+          </div>
+        </div>
+        <!-- Tax -->
+        <div class="row mb-2 mb-lg-3">
+          <div
+            class="col col-lg-4 col-sm-12 col-md-12 d-flex align-items-center mb-sm-1 mb-lg-0"
+          >
+            <label for="#vat-data">The VAT tax:</label>
+          </div>
+
+          <div class="col col-lg-8 col-sm-12 col-md-12 position-relative">
+            <input
+              class="w-100 form-control"
+              type="number"
+              name="vat-data"
+              id="vat-data"
+              value="10"
+              step="0.1"
+              required
+            />
+            <span class="percent">%</span>
+          </div>
+        </div>
+        <!-- The number of letter -->
+        <div class="row mb-2 mb-lg-3">
+          <div
+            class="col col-lg-4 col-sm-12 col-md-12 d-flex align-items-center mb-sm-1 mb-lg-0"
+          >
+            <label for="#number-letter">The number of letters:</label>
+          </div>
+          <div class="col col-lg-8 col-sm-12 col-md-12">
+            <input
+              class="w-100 form-control"
+              type="text"
+              name="number-letter"
+              id="number-letter"
+              disabled
+            />
+          </div>
+        </div>
+        <!-- The total amount payable: -->
+        <div class="row mb-2 mb-lg-3">
+          <div
+            class="col col-lg-4 col-sm-12 col-md-12 d-flex align-items-center mb-sm-1 mb-lg-0"
+          >
+            <label for="#amount-pay">The total amount payable:</label>
+          </div>
+          <div class="col col-lg-8 col-sm-12 col-md-12">
+            <input
+              class="w-100 form-control"
+              type="text"
+              name="amount-pay"
+              id="amount-pay"
+              disabled
+            />
+          </div>
+        </div>
+      </div>
+      <!-- Button row -->
+      <div class="row mb-2 mb-lg-3">
+        <div class="col col-6">
+          <button type="button" class="btn btn-primary w-100" id="calBtn">
+            Calculate amount payable
+          </button>
+        </div>
+        <div class="col col-6">
+          <button type="reset" class="btn btn-primary w-100">Clear</button>
+        </div>
+      </div>
+    </form>
+
+    <!-- Table of Electric Data -->
+    <div class="container">
+      <h3 for="">Thông tin đã thêm:</h3>
+      <!-- Define the number of row -->
+      <div class="mb-2 d-flex justify-content-between">
+        <div class="align-self-center">
+          <label for="">Hiển thị: </label>
+          <select name="" id="records">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+          </select>
+          <label for="">records</label>
+        </div>
+        <button class="btn btn-outline-success border-dark py-1 px-2 download">
+          <i class="fa-solid fa-file-excel"></i>
+          <a class="link"></a> Download Excel
+        </button>
+      </div>
+      <!-- Table of Data -->
+      <div class="row">
+        <table id="customerTable" class="table border-dark">
+          <thead class="border-dark bg-primary text-center">
+            <tr>
+              <th>No</th>
+              <th style="width: 15%">Name</th>
+              <th style="width: 15%">Address</th>
+              <th style="width: 10%">Start</th>
+              <th style="width: 10%">End</th>
+              <th style="width: 7%">VAT</th>
+              <th style="width: 15%">Consumption</th>
+              <th style="width: 10%">Amount</th>
+              <th style="width: 10%">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="test"></div>
+      <ul class="pagination"></ul>
+    </div>
+    <!-- Modal of Edit Electric Data -->
+    <div class="modal w-100 p-3">
+      <!-- Modal container -->
+      <div
+        class="modal-form container border border-success rounded w-50 bg-light mt-5 p-3 p-sm-3 p-md-5"
+        style="position: absolute; left: 50%; transform: translateX(-50%)"
+      >
+        <h3 class="text-primary text-center mb-3">Update bill for customer</h3>
+        <!-- Name editing row -->
+        <div class="row m-0">
+          <div
+            class="col col-12 col-sm-12 col-md-5 col-lg-4 align-self-center pl-0 mt-2"
+          >
+            Name:
+          </div>
+          <input
+            type="text"
+            class="nameUpdate col col-12 col-sm-12 col-md-7 col-lg-8 form-control border border-info mt-1"
+          />
+        </div>
+        <!-- Address editing row -->
+        <div class="row m-0">
+          <div
+            class="col col-12 col-sm-12 col-md-5 col-lg-4 align-self-center pl-0 mt-2"
+          >
+            Address:
+          </div>
+          <input
+            type="text"
+            class="addUpdate col col-12 col-sm-12 col-md-7 col-lg-8 form-control border border-info mt-1"
+          />
+        </div>
+        <!-- Start-up period editing row -->
+        <div class="row m-0">
+          <div
+            class="col col-12 col-sm-12 col-md-5 col-lg-4 align-self-center pl-0 mt-2"
+          >
+            Start-up period:
+          </div>
+          <input
+            type="number"
+            class="startUpdate col col-12 col-sm-12 col-md-7 col-lg-8 form-control border border-info mt-1"
+          />
+        </div>
+        <!-- End-of-item digits editing row -->
+        <div class="row m-0">
+          <div
+            class="col col-12 col-sm-12 col-md-5 col-lg-4 align-self-center pl-0 mt-2"
+          >
+            End-of-item digits:
+          </div>
+          <input
+            type="number"
+            class="endUpdate col col-sm-12 col-md-7 col-lg-8 form-control border border-info mt-1"
+          />
+        </div>
+        <!-- The VAT tax editing row -->
+        <div class="row m-0">
+          <div
+            class="col col-12 col-sm-12 col-md-5 col-lg-4 align-self-center pl-0 mt-2"
+            style="line-height: 1"
+          >
+            The VAT tax:
+          </div>
+          <div class="position-relative col col-sm-12 col-md-7 col-lg-8 p-0">
+            <input
+              type="number"
+              class="vatUpdate form-control border border-info mt-1"
+            />
+            <span class="percent">%</span>
+          </div>
+        </div>
+        <!-- Button row-->
+        <div class="row mt-2 mt-sm-0">
+          <div class="col col-12 col-sm-12 col-md-6 mt-1 mt-sm-3">
+            <button type="submit" class="btn btn-primary w-100" id="update">
+              Update
+            </button>
+          </div>
+          <div class="col col-12 col-sm-12 col-md-6 mt-1 mt-sm-3">
+            <button type="button" class="btn btn-primary w-100" id="cancel">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./JS/jquery-3.6.0.min.js"></script>
+    <script src="./JS/popper.min.js"></script>
+    <script src="./JS/bootstrap.min.js"></script>
+    <script type="module" src="./JS/main-data.js"></script>
+  </body>
+</html>

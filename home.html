@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HỆ THỐNG QUẢN LÝ THÔNG TIN NGƯỜI DÙNG</title>
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="./CSS/all.min.css" /> -->
+    <!-- The font awesome in the hardware storage isn't linked -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./CSS/home.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="row p-3 m-0 justify-content-between">
+      <!-- Logo of home page -->
+      <a href="https://iviettech.vn/" class="text-center logo" target="_blank">
+        <img class="w-100" src="./IMG/logo.png" alt="" srcset="" />
+      </a>
+
+      <!-- Register-Login container -->
+      <div class="regContainer d-flex align-items-center text-white">
+        <button
+          class="btn btn-home"
+          data-toggle="modal"
+          data-target="#modalRegister"
+        >
+          Register
+        </button>
+        <button
+          class="btn ml-2 btn-home"
+          data-toggle="modal"
+          data-target="#modalLogin"
+        >
+          Login
+        </button>
+      </div>
+      <!-- User container: displayed on successful login -->
+      <div class="userContainer dropdown d-none">
+        <button
+          class="text-white border-0 bg-transparent"
+          type="button"
+          id="userMenu"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <span class="userName"></span>
+
+          <i
+            class="text-primary fa fa-user-circle ml-2 mr-4"
+            aria-hidden="true"
+          ></i>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="userMenu">
+          <a class="dropdown-item">Trang chủ</a>
+
+          <a class="dropdown-item" href="./search.html">Tra cứu thông tin</a>
+          <a class="dropdown-item inforManager" href="./data-manager.html"
+            >Quản lý thông tin Customer</a
+          >
+          <a class="dropdown-item logOut-button">Đăng xuất</a>
+        </div>
+      </div>
+    </div>
+    <!-- Main content -->
+    <div id="" class="text-white text-center p-5 mt-5 container-fluid main">
+      <h1 class="mt-3">CHÀO MỪNG ĐẾN VỚI</h1>
+      <h1 class="mt-4">HỆ THỐNG QUẢN LÝ THÔNG TIN NGƯỜI DÙNG</h1>
+    </div>
+    <!-- Footer -->
+    <div class="footer fixed-bottom main-back-color">
+      <p><i class="fa-regular fa-copyright"></i> Design by Mai Thinh Phat</p>
+    </div>
+    <!-- Modal  -->
+    <div>
+      <!-- Modal Register -->
+      <div class="modal fade" id="modalRegister" data-backdrop="static">
+        <!-- User class modal-dialog to responsive -->
+        <div class="modal-dialog">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header main-back-color p-2 text-white">
+              <h7 class="m-0">ĐĂNG KÝ THÔNG TIN USER</h7>
+              <button
+                type="button"
+                class="close closeRegister border-0 bg-transparent m-0 p-0 px-2"
+                data-dismiss="modal"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body">
+              <!-- Input name -->
+              <input
+                id="name"
+                type="text"
+                class="form-control"
+                placeholder="Enter name"
+              />
+              <p class="text-danger"></p>
+              <!-- Input email -->
+              <input
+                id="email"
+                type="text"
+                class="form-control"
+                placeholder="Enter email"
+              />
+              <p class="text-danger"></p>
+              <!-- Input phone -->
+              <input
+                id="phone"
+                type="text"
+                class="form-control"
+                placeholder="Enter phone"
+                maxlength="11"
+              />
+              <p class="text-danger"></p>
+              <!-- Input password -->
+              <input
+                id="pass"
+                type="password"
+                class="form-control"
+                placeholder="Enter pass"
+              />
+              <p class="text-danger"></p>
+              <!-- Level of user selector -->
+              <div class="levelSelector mt-2">
+                <p>Select the level of user:</p>
+                <label
+                  class="ml-3"
+                  title="Level 1: Normal user - Can only look up information"
+                  ><input
+                    id="level1"
+                    name="userLevel"
+                    type="radio"
+                    value="1"
+                    checked
+                  />Level 1</label
+                ><label
+                  title="Level 2: Editor - Can look up information and access to information manager screen"
+                  ><input
+                    id="level2"
+                    name="userLevel"
+                    type="radio"
+                    value="2"
+                  />Level 2</label
+                ><label
+                  title="Level 3: Admin - Full permission (look up, edit, delete data)"
+                  ><input
+                    id="level3"
+                    name="userLevel"
+                    type="radio"
+                    value="3"
+                  />Level 3</label
+                >
+                <!-- Tham khảo thêm section storage -->
+              </div>
+            </div>
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+              <button
+                type="button"
+                id="saveBtn"
+                class="btn btn-primary btn-home px-4"
+              >
+                Save
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary btn-home px-4"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal Login -->
+      <div class="modal fade" id="modalLogin" data-backdrop="static">
+        <!-- User class modal-dialog to responsive -->
+        <div class="modal-dialog">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header main-back-color p-2 text-white">
+              <h7 class="m-0">ĐĂNG NHẬP HỆ THỐNG</h7>
+              <button
+                type="button"
+                class="close closeLogin border-0 bg-transparent m-0 p-0 px-2"
+                data-dismiss="modal"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body">
+              <input
+                id="loginEmail"
+                type="text"
+                class="form-control"
+                placeholder="Enter email"
+              />
+              <input
+                id="loginPass"
+                type="password"
+                class="form-control"
+                placeholder="Enter pass"
+              />
+            </div>
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+              <button
+                id="login-button"
+                type="button"
+                class="btn btn-primary btn-home px-4"
+              >
+                Đăng nhập
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary btn-home px-4"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./JS/jquery-3.6.0.min.js"></script>
+    <!-- Use popper library to use dropdown menu bootstrap -->
+    <script src="./JS/popper.min.js"></script>
+    <script src="./JS/bootstrap.min.js"></script>
+    <script type="module" src="./JS/home.js"></script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+html,
+body {
+  min-height: 100%;
+}
+p {
+  margin: 0;
+}
+label {
+  margin-bottom: 0;
+}
+.percent {
+  display: inline-block;
+  position: absolute;
+  right: 75%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  color: red;
+}
+table,
+th,
+td {
+  border: 1px black solid !important;
+  border-collapse: collapse;
+  text-align: center;
+  vertical-align: middle !important;
+}
+th {
+  cursor: pointer;
+}
+td {
+  padding: 0.5rem !important;
+}
+tr {
+  height: 40px;
+}
+tbody tr:nth-child(odd) {
+  background-color: rgb(209, 247, 245);
+}
+.modal {
+  /* display: flex; */
+  background-color: rgba(1, 1, 1, 0.3);
+}
+.col-md-5,
+.col-lg-4 {
+  line-height: 1;
+}
+a {
+  cursor: pointer;
+}
+.userContainer {
+  font-size: 20px;
+}
+/* .input-label + .col-sm-12 {
+  margin-bottom: 1rem;
+} */
+.dropdown-menu {
+  left: auto !important;
+  right: 0px !important;
+}
+.dropdown-item {
+  cursor: pointer;
+}
